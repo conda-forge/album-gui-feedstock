@@ -1,5 +1,5 @@
 {% set name = "album-gui" %}
-{% set version = "0.4.5" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 81d3fa0c72e5f862279f6e59b7a448521db46f9cba18a2a781057bc2ca46302e
+  sha256: 11989e541ae21e98310e988c8ce12de5920969597bf55a6625153aee8d342f9b
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
