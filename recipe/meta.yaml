@@ -11,17 +11,17 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   noarch: python
 
 requirements:
   host:
     - pip
+    - setuptools
     - python {{ python_min }}
   run:
-    - pip
     - python >={{ python_min }}
-    - {{ pin_compatible('album', lower_bound='0.12.0', upper_bound='0.13.0') }}
+    - album >=0.12,<0.13
     - pyqt >=5.15.6
     - pywin32-on-windows >=0.1.0
 
@@ -29,7 +29,6 @@ test:
   imports:
     - album.gui
   commands:
-    - pip list
     - pip check
   requires:
     - pip
@@ -42,10 +41,9 @@ about:
   license_file: LICENSE
   summary: Album is a framework for unifying computational tools across frameworks, languages, and environments. This package provides a graphical user interface for Album.
   doc_url: https://docs.album.solutions
-  dev_url: https://gitlab.com/album-app/album-gui
+  dev_url: https://gitlab.com/album-app/plugins/album-gui
 
 extra:
   recipe-maintainers:
     - jpalbrecht
     - frauzufall
-    - jpalbrecht
