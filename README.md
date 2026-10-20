@@ -9,7 +9,7 @@ Package license: MIT
 
 Summary: Album is a framework for unifying computational tools across frameworks, languages, and environments. This package provides a graphical user interface for Album.
 
-Development: https://gitlab.com/album-app/album-gui
+Development: https://gitlab.com/album-app/plugins/album-gui
 
 Documentation: https://docs.album.solutions
 
@@ -20,7 +20,9 @@ Current build status
 <table><tr>
     <td>All platforms:</td>
     <td>
-      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
+      <a href="https://github.com/conda-forge/album-gui-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/album-gui-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
     </td>
   </tr>
 </table>
@@ -42,31 +44,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `album-gui` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install album-gui
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install album-gui
 ```
 
-It is possible to list all of the versions of `album-gui` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add album-gui
+# for installing globally
+pixi global install album-gui
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `album-gui` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search album-gui --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search album-gui --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search album-gui --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -78,6 +122,8 @@ mamba repoquery whoneeds album-gui --channel conda-forge
 # List dependencies of `album-gui`:
 mamba repoquery depends album-gui --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
